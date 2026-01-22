@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 482222131312361950}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 1.38, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3598235460381326057}
   - component: {fileID: 4409491262282868582}
-  - component: {fileID: 409230882238855807}
+  - component: {fileID: 3174126294902892640}
   m_Layer: 0
   m_Name: nest
   m_TagString: Untagged
@@ -199,7 +199,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &409230882238855807
+--- !u!114 &3174126294902892640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,8 +208,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8188047926376811363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f3383d8a67deb46af73f551c7801c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f7489fa1efec047a0b9e6b03fa5baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   animator: {fileID: 6625384220650347024}
+  inRange: 0

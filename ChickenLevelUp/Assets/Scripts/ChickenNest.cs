@@ -1,10 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class ChickenNest : MonoBehaviour
+public class ChickenNest : InteractivePopUp
 {
-    [SerializeField] GameObject Player;
-    bool inRange;
     void Start()
     {
         
@@ -13,6 +11,11 @@ public class ChickenNest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Detection();
 
+        if(inRange && Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("YEAH");
+        }
     }
 }
