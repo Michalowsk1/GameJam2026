@@ -1,65 +1,75 @@
 using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
 
 public class LevelingSystem : MonoBehaviour
 {
     public static int speedIncrease;
     public static float speedUpIncrease;
+    public static float eggCount = 0;
+    public static float seedCount = 0;
+    public static int eggRequirement = 2;
+    public static int seedRequirement = 5;
 
     //STATS
-    int MaxHealth;
-    int health;
-    int damage;
     public static float cluckingPower;
     public static int multiDropChance;
-    float TaskSpeedIncreaser;
+    public static float TaskSpeedIncreaser;
 
     //LEVEL
     public static int roundCount;
-    public static int xp;
     public static int level;
-    int xpRequirement;
     void Start()
     {
-        speedIncrease = 0; speedUpIncrease = 0; health = 10; damage = 1; cluckingPower = 0; multiDropChance = 0; TaskSpeedIncreaser = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        LevelingUp();
+        StatsMananger(); levelRequirements();
     }
 
-    int XPRequirementCalculator()
+    void StatsMananger()
     {
-        xpRequirement = 10 + (5 * level);
-        return xpRequirement;
+        switch (level)
+        {
+            case 0:
+                speedIncrease = 0;
+                speedUpIncrease = 0;
+                cluckingPower = 0;
+                multiDropChance = 0;
+                TaskSpeedIncreaser = 1;
+                break;
+
+            case 1:
+                speedIncrease = 2;
+                speedUpIncrease = 0.1f;
+                cluckingPower = 1;
+                multiDropChance = 1;
+                TaskSpeedIncreaser = 1.5f;
+                break;
+            case 2:
+                speedIncrease = 4;
+                speedUpIncrease = 0.2f;
+                cluckingPower = 2;
+                multiDropChance = 2;
+                TaskSpeedIncreaser = 2;
+                break;
+        }
     }
 
-    void LevelingUp()
+    void levelRequirements()
     {
-        if(xp >= XPRequirementCalculator())
+        if(eggCount == eggRequirement && seedCount == seedRequirement)
         {
             level++;
-            health = MaxHealth;
-            xp = 0;
-            StatIncreaser();
+            eggCount = 0;
+            seedCount = 0;
+            eggRequirement = eggRequirement * 2;
+            seedRequirement = seedRequirement * 2;
         }
     }
 
-    void StatIncreaser()
-    {
-        MaxHealth = MaxHealth + (2 * level);
-        damage = damage + (3 * level);
-
-        if (level % 2 == 0)
-            cluckingPower++;
-        else
-        {
-            multiDropChance++;
-            TaskSpeedIncreaser += 0.1f;
-        }
-
-    }
-
+    
 }

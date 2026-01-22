@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 1570520636921425640, guid: 018cb66ccbbe617488d130fab2375470, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -193,7 +193,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.36, z: -0.66}
-  m_LocalScale: {x: 2.64768, y: 0.42432204, z: 0.71716}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4887343829652603284}
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.49999988, b: 0.49999988, a: 1}
   m_FlipX: 0
@@ -280,7 +280,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.36, z: -0.21}
-  m_LocalScale: {x: 2.83992, y: 0.59167, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4887343829652603284}
@@ -328,7 +328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.54088044, g: 0.54088044, b: 0.54088044, a: 1}
   m_FlipX: 0
@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 3598235460381326057}
   - component: {fileID: 4409491262282868582}
   - component: {fileID: 3174126294902892640}
+  - component: {fileID: 3585022810092446905}
   m_Layer: 0
   m_Name: nest
   m_TagString: Untagged
@@ -447,3 +448,26 @@ MonoBehaviour:
   inRange: 0
   interactionRange: 0.75
   animatorProgress: {fileID: 5903575179835238031}
+  animatorDone: {fileID: 3585022810092446905}
+--- !u!95 &3585022810092446905
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188047926376811363}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c701f89028205b34e80d87eedf596d3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

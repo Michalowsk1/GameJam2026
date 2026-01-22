@@ -4,41 +4,49 @@ using UnityEngine.Rendering;
 
 public class MapInteractiveSpawner : MonoBehaviour
 {
+    //Map Spawns
     public Vector3 flowerSpawn;
-    public List<Vector3> tempFlowerPositions = new List<Vector3>();
-    public List<Vector3> confirmedFlowerPositions = new List<Vector3>();
-    [SerializeField] GameObject[] flowers;
-    [SerializeField] GameObject[] nests;
+    public List<Vector3> tempObjectsPositions = new List<Vector3>();
+    public List<Vector3> confirmedObjectPositions = new List<Vector3>();
+    [SerializeField] GameObject[] InteractableObjects;
+    [SerializeField] GameObject grass;
 
-    int flowersToSpawn;
+    // Levels Info
+    int maxNumOfObjects = 30;
+    public static int spawned = 0;
     void Start()
     {
         flowerGenerator();
+        grassSpawner();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (confirmedFlowerPositions.Count == 10)
+        Debug.Log(spawned);
+        if (confirmedObjectPositions.Count == maxNumOfObjects)
         {
             flowerSpawner();
-            confirmedFlowerPositions.Clear();
+            confirmedObjectPositions.Clear();
         }
+
+        if (spawned < maxNumOfObjects / 2)
+            flowerGenerator();
     }
 
     void flowerGenerator()
     {
         Vector3 tempPos = GenerateFlowerPosition();
-        if (tempFlowerPositions.Count < 10)
+        if (tempObjectsPositions.Count < maxNumOfObjects)
         {
-            tempFlowerPositions.Add(tempPos);
+            tempObjectsPositions.Add(tempPos);
             flowerGenerator();
         }
-        foreach (Vector3 pos in tempFlowerPositions)
+        foreach (Vector3 pos in tempObjectsPositions)
         {
-            if (Vector3.Distance(tempPos, pos) > 2 && confirmedFlowerPositions.Count < 10)
+            if (Vector3.Distance(tempPos, pos) > 2 && confirmedObjectPositions.Count < maxNumOfObjects)
             {
-                confirmedFlowerPositions.Add(pos);
+                confirmedObjectPositions.Add(pos);
             }
         }
 
@@ -46,12 +54,11 @@ public class MapInteractiveSpawner : MonoBehaviour
 
     void flowerSpawner()
     {
-        int spawned = 0;
-        if (spawned < 10)
+        if (spawned < maxNumOfObjects)
         {
-            foreach (Vector3 pos in confirmedFlowerPositions)
+            foreach (Vector3 pos in confirmedObjectPositions)
             {
-                Instantiate(flowers[Random.Range(0, flowers.Length)], pos, Quaternion.identity);
+                Instantiate(InteractableObjects[Random.Range(0, InteractableObjects.Length)], pos, Quaternion.identity);
                 spawned++;
             }
         }
@@ -60,8 +67,16 @@ public class MapInteractiveSpawner : MonoBehaviour
 
     Vector3 GenerateFlowerPosition()
     {
-        float yPos = Random.Range(-12, 1);
+        float yPos = Random.Range(-45, 1);
         flowerSpawn = new Vector3(Random.Range(-20, 20), yPos,yPos);
         return flowerSpawn;
+    }
+
+    void grassSpawner()
+    {
+        for(int i = 0;  i < 75; i++)
+        {
+            Instantiate(grass, new Vector2(Random.Range(-20,20), Random.Range(-45,1)), Quaternion.identity);
+        }
     }
 }

@@ -13,12 +13,12 @@ public class cameraScript : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, -100);
 
-        if (gameObject.transform.position.x > 8.5) gameObject.transform.position = new Vector3(8.5f, gameObject.transform.position.y, -100);
+        if (gameObject.transform.position.x > 23) gameObject.transform.position = new Vector3(23, gameObject.transform.position.y, -100);
 
-        if (gameObject.transform.position.x < -9) gameObject.transform.position = new Vector3(-9, gameObject.transform.position.y, -100);
+        if (gameObject.transform.position.x < -24) gameObject.transform.position = new Vector3(-24, gameObject.transform.position.y, -100);
 
-        if (gameObject.transform.position.y > 7) gameObject.transform.position = new Vector3(gameObject.transform.position.x, 7, -100);
+        if (gameObject.transform.position.y > 6.5f) gameObject.transform.position = new Vector3(gameObject.transform.position.x, 6.5f, -100);
 
-        if (gameObject.transform.position.y < -7) gameObject.transform.position = new Vector3(gameObject.transform.position.x, -7, -100);
+        if (gameObject.transform.position.y < -45) gameObject.transform.position = new Vector3(gameObject.transform.position.x, -45, -100);
     }
 }

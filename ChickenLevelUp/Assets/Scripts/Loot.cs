@@ -33,7 +33,8 @@ public class Loot : MonoBehaviour
         {
             int rand = Random.Range(0, 25);
             if (rand < 2)
-                LevelingSystem.multiDropChance++;
+            LevelingSystem.multiDropChance++;
+            LevelingSystem.seedCount++;
         }
     }
 }

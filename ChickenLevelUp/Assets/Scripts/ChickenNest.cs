@@ -5,6 +5,7 @@ public class ChickenNest : InteractivePopUp
 {
     float taskTimer = 4.9f;
     public Animator animatorProgress;
+    public Animator animatorDone;
     void Start()
     {
         
@@ -19,6 +20,11 @@ public class ChickenNest : InteractivePopUp
         {
             taskTimer -= Time.deltaTime;
             animatorProgress.SetBool("Heating", true);
+            if(LevelingSystem.level == 3)
+            {
+                taskTimer -= Time.deltaTime * 2;
+                animatorProgress.speed = 2;
+            }
         }
         else
         {
@@ -26,7 +32,14 @@ public class ChickenNest : InteractivePopUp
             taskTimer = 4.9f;
         }
 
+
+
         if (taskTimer <= 0)
-            Debug.Log("Finished");
+        {
+            Debug.Log("Warmed");
+            animatorDone.SetBool("done", true);
+            MapInteractiveSpawner.spawned--;
+            LevelingSystem.eggCount++;
+        }
     }
 }

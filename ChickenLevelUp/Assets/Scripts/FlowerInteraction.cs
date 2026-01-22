@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class FlowerInteraction : InteractivePopUp
 {
+    public static int seedCount;
     [SerializeField] GameObject Loot;
-
+    public Animator flowerAnim;
     public float lootDropTimer;
     public bool clucked;
     int multiLootOdds = 1;
+
+    public static bool done;
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +22,7 @@ public class FlowerInteraction : InteractivePopUp
 
         if (lootDropTimer <= 0 && clucked)
         {
-            int rand = Random.Range(0, 5 - LevelingSystem.multiDropChance);
+            int rand = Random.Range(0, 7 - LevelingSystem.multiDropChance);
             if (multiLootOdds > rand)
             {
                 for (int i = 0; i < Random.Range(2, 4); i++)
@@ -32,6 +35,8 @@ public class FlowerInteraction : InteractivePopUp
                 Instantiate(Loot, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2), Quaternion.identity);
                 clucked = false;
             }
+            flowerAnim.SetBool("done", true);
+            MapInteractiveSpawner.spawned--;
         }
 
         if (clucked)
