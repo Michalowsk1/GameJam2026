@@ -4,12 +4,13 @@ using UnityEngine.Rendering;
 
 public class MapInteractiveSpawner : MonoBehaviour
 {
-    public Vector2 flowerSpawn;
-    int flowerCount;
-    public List<Vector2> tempFlowerPositions = new List<Vector2>();
-    public List<Vector2> confirmedFlowerPositions = new List<Vector2>();
+    public Vector3 flowerSpawn;
+    public List<Vector3> tempFlowerPositions = new List<Vector3>();
+    public List<Vector3> confirmedFlowerPositions = new List<Vector3>();
     [SerializeField] GameObject[] flowers;
     [SerializeField] GameObject[] nests;
+
+    int flowersToSpawn;
     void Start()
     {
         flowerGenerator();
@@ -19,20 +20,23 @@ public class MapInteractiveSpawner : MonoBehaviour
     void Update()
     {
         if (confirmedFlowerPositions.Count == 10)
+        {
             flowerSpawner();
+            confirmedFlowerPositions.Clear();
+        }
     }
 
     void flowerGenerator()
     {
-        Vector2 tempPos = GenerateFlowerPosition();
-        if (tempFlowerPositions.Count < 100)
+        Vector3 tempPos = GenerateFlowerPosition();
+        if (tempFlowerPositions.Count < 10)
         {
             tempFlowerPositions.Add(tempPos);
             flowerGenerator();
         }
-        foreach (Vector2 pos in tempFlowerPositions)
+        foreach (Vector3 pos in tempFlowerPositions)
         {
-            if (Vector2.Distance(tempPos, pos) > 2 && confirmedFlowerPositions.Count < 10)
+            if (Vector3.Distance(tempPos, pos) > 2 && confirmedFlowerPositions.Count < 10)
             {
                 confirmedFlowerPositions.Add(pos);
             }
@@ -45,7 +49,7 @@ public class MapInteractiveSpawner : MonoBehaviour
         int spawned = 0;
         if (spawned < 10)
         {
-            foreach (Vector2 pos in confirmedFlowerPositions)
+            foreach (Vector3 pos in confirmedFlowerPositions)
             {
                 Instantiate(flowers[Random.Range(0, flowers.Length)], pos, Quaternion.identity);
                 spawned++;
@@ -54,9 +58,9 @@ public class MapInteractiveSpawner : MonoBehaviour
     }
 
 
-    Vector2 GenerateFlowerPosition()
+    Vector3 GenerateFlowerPosition()
     {
-        float yPos = Random.Range(-12, 7);
+        float yPos = Random.Range(-12, 1);
         flowerSpawn = new Vector3(Random.Range(-20, 20), yPos,yPos);
         return flowerSpawn;
     }

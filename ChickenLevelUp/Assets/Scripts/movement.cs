@@ -22,7 +22,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement(); NestAnimation();
+        Movement();
     }
 
     void Movement()
@@ -56,25 +56,5 @@ public class movement : MonoBehaviour
             speed = maxSpeed + LevelingSystem.speedIncrease;
 
         rb.freezeRotation = true;
-    }
-
-    void NestInteraction()
-    {
-        if (Vector2.Distance(Player.transform.position, gameObject.transform.position) < 2.5f)
-            inRange = true;
-
-        if (inRange && Input.GetKey(KeyCode.E))
-            startAnim = true;
-
-    }
-
-    IEnumerator NestAnimation()
-    {
-        yield return null;
-    }
-
-    void FlowerInteraction()
-    {
-
     }
 }

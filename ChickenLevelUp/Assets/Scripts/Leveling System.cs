@@ -17,7 +17,7 @@ public class LevelingSystem : MonoBehaviour
     //LEVEL
     public static int roundCount;
     public static int xp;
-    int level;
+    public static int level;
     int xpRequirement;
     void Start()
     {

@@ -446,3 +446,4 @@ MonoBehaviour:
   animator: {fileID: 6625384220650347024}
   inRange: 0
   interactionRange: 0.75
+  animatorProgress: {fileID: 5903575179835238031}
