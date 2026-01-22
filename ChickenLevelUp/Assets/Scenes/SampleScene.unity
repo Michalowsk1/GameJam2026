@@ -250,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1243776f7fd0448a9865bfb3da024e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   rb: {fileID: 745899921}
   speed: 5
   walking: 0
@@ -960,6 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056905390}
+  - component: {fileID: 2056905391}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -983,6 +985,26 @@ Transform:
   - {fileID: 2105590621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2056905391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056905389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faebdbff432ce3f4592fbfd165ccf96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowerSpawn: {x: 0, y: 0}
+  tempFlowerPositions: []
+  confirmedFlowerPositions: []
+  flowers:
+  - {fileID: 8024231674616500325, guid: 741831e0a1407084aa7652c40ec901d5, type: 3}
+  - {fileID: 5664814016147495065, guid: 8320ff0bd78b27548afc5d95ba4b0b40, type: 3}
+  - {fileID: 2033364908390571327, guid: e7802e022a6ad524caf897a878cb1442, type: 3}
+  nests: []
 --- !u!1 &2105590620
 GameObject:
   m_ObjectHideFlags: 0
