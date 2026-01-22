@@ -1,19 +1,25 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractivePopUp : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     public Animator animator;
-    void Start()
-    {
-        
-    }
+    public bool inRange;
 
     // Update is called once per frame
-    void Update()
+    public void Detection()
     {
-        if(Vector2.Distance(Player.transform.position, gameObject.transform.position) < 2.5f)
+        Player = GameObject.Find("/Player");
+        if (Vector2.Distance(Player.transform.position, gameObject.transform.position) < 2.5f)
+        {
             animator.SetBool("Came", true);
-        else animator.SetBool("Came", false);
+            inRange = true;
+        }
+        else
+        {
+            animator.SetBool("Came", false);
+            inRange = false;
+        }
     }
 }

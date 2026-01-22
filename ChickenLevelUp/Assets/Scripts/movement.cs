@@ -70,4 +70,9 @@ public class movement : MonoBehaviour
     {
         yield return null;
     }
+
+    void FlowerInteraction()
+    {
+
+    }
 }
