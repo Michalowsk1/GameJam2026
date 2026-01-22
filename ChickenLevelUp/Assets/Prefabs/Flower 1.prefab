@@ -105,7 +105,10 @@ MonoBehaviour:
   Player: {fileID: 0}
   animator: {fileID: 3524394219846595875}
   inRange: 0
+  interactionRange: 2.5
   Loot: {fileID: 3443934202726150514, guid: abf11cc4b3a5d004f8e8505a868a1015, type: 3}
+  lootDropTimer: 0
+  clucked: 0
 --- !u!1 &7093745704191047696
 GameObject:
   m_ObjectHideFlags: 0

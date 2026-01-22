@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ChickenNest : InteractivePopUp
 {
+    float taskTimer = 4.9f;
+    public Animator animatorProgress;
     void Start()
     {
         
@@ -13,9 +15,18 @@ public class ChickenNest : InteractivePopUp
     {
         Detection();
 
-        if(inRange && Input.GetKey(KeyCode.E))
+        if (inRange && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("YEAH");
+            taskTimer -= Time.deltaTime;
+            animatorProgress.SetBool("Heating", true);
         }
+        else
+        {
+            animatorProgress.SetBool("Heating", false);
+            taskTimer = 4.9f;
+        }
+
+        if (taskTimer <= 0)
+            Debug.Log("Finished");
     }
 }
