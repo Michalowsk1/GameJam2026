@@ -10,8 +10,8 @@ public class LevelingSystem : MonoBehaviour
     int MaxHealth;
     int health;
     int damage;
-    int cluckingPower;
-    int multiDropChance;
+    public static float cluckingPower;
+    public static int multiDropChance;
     float TaskSpeedIncreaser;
 
     //LEVEL
@@ -21,7 +21,7 @@ public class LevelingSystem : MonoBehaviour
     int xpRequirement;
     void Start()
     {
-        speedIncrease = 0; speedUpIncrease = 0; health = 10; damage = 1; cluckingPower = 1; multiDropChance = 1; TaskSpeedIncreaser = 0;
+        speedIncrease = 0; speedUpIncrease = 0; health = 10; damage = 1; cluckingPower = 0; multiDropChance = 0; TaskSpeedIncreaser = 0;
     }
 
     // Update is called once per frame

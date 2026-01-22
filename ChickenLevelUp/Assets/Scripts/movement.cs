@@ -54,6 +54,8 @@ public class movement : MonoBehaviour
             speed += (0.05f + LevelingSystem.speedUpIncrease);
         if(speed > maxSpeed + LevelingSystem.speedIncrease)
             speed = maxSpeed + LevelingSystem.speedIncrease;
+
+        rb.freezeRotation = true;
     }
 
     void NestInteraction()
