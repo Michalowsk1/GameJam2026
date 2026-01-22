@@ -67,8 +67,8 @@ public class MapInteractiveSpawner : MonoBehaviour
 
     Vector3 GenerateFlowerPosition()
     {
-        float yPos = Random.Range(-45, 1);
-        flowerSpawn = new Vector3(Random.Range(-20, 20), yPos,yPos);
+        float yPos = Random.Range(-50, 1);
+        flowerSpawn = new Vector3(Random.Range(-35, 35), yPos,yPos);
         return flowerSpawn;
     }
 

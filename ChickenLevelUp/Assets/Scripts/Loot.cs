@@ -35,6 +35,7 @@ public class Loot : MonoBehaviour
             if (rand < 2)
             LevelingSystem.multiDropChance++;
             LevelingSystem.seedCount++;
+            Destroy(gameObject);
         }
     }
 }

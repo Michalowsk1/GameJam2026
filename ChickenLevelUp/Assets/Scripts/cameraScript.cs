@@ -5,7 +5,7 @@ public class cameraScript : MonoBehaviour
     [SerializeField] GameObject Player;
     void Start()
     {
-        
+        Player = GameObject.Find("/Player");
     }
 
     // Update is called once per frame
