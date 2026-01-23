@@ -22,8 +22,8 @@ public class ChickenNest : InteractivePopUp
             animatorProgress.SetBool("Heating", true);
             if(LevelingSystem.level == 3)
             {
-                taskTimer -= Time.deltaTime * 2;
-                animatorProgress.speed = 2;
+                taskTimer -= Time.deltaTime * 4;
+                animatorProgress.speed = 4;
             }
         }
         else

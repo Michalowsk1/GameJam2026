@@ -35,7 +35,6 @@ public class LevelingSystem : MonoBehaviour
     void Update()
     {
         StatsMananger(); levelRequirements();
-
     }
 
     void StatsMananger()
@@ -55,17 +54,20 @@ public class LevelingSystem : MonoBehaviour
                 spriteRenderer.sprite = chicken2;
                 speedIncrease = 2;
                 speedUpIncrease = 0.1f;
-                cluckingPower = 1;
+                cluckingPower = 2;
                 multiDropChance = 1;
-                TaskSpeedIncreaser = 1.5f;
+                TaskSpeedIncreaser = 1f;
                 break;
             case 2:
                 spriteRenderer.sprite = chicken3;
                 speedIncrease = 4;
                 speedUpIncrease = 0.2f;
-                cluckingPower = 2;
-                multiDropChance = 2;
-                TaskSpeedIncreaser = 2;
+                cluckingPower = 3;
+                multiDropChance = 3;
+                TaskSpeedIncreaser = 4;
+                break;
+            case 3:
+                Results.win = true;
                 break;
         }
     }
@@ -79,6 +81,7 @@ public class LevelingSystem : MonoBehaviour
             seedCount = 0;
             eggRequirement = eggRequirement * 2;
             seedRequirement = seedRequirement * 2;
+            UI.timeLeft += 75;
         }
 
         if (eggCount > eggRequirement) eggCount = eggRequirement;
