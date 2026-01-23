@@ -42,4 +42,14 @@ public class ChickenNest : InteractivePopUp
             LevelingSystem.eggCount++;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            enemyAI.score += 2;
+            Destroy(gameObject);
+            MapInteractiveSpawner.spawned--;
+        }
+    }
 }

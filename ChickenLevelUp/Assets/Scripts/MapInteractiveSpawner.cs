@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class MapInteractiveSpawner : MonoBehaviour
 {
     //Map Spawns
     public Vector3 flowerSpawn;
     public List<Vector3> tempObjectsPositions = new List<Vector3>();
-    public List<Vector3> confirmedObjectPositions = new List<Vector3>();
+    public static List<Vector3> confirmedObjectPositions = new List<Vector3>();
     [SerializeField] GameObject[] InteractableObjects;
     [SerializeField] GameObject grass;
+    [SerializeField] GameObject[] enemySprite;
 
     // Levels Info
     int maxNumOfObjects = 30;
@@ -18,6 +18,7 @@ public class MapInteractiveSpawner : MonoBehaviour
     {
         flowerGenerator();
         grassSpawner();
+        EnemySpawner();
     }
 
     // Update is called once per frame
@@ -77,6 +78,14 @@ public class MapInteractiveSpawner : MonoBehaviour
         for(int i = 0;  i < 75; i++)
         {
             Instantiate(grass, new Vector2(Random.Range(-20,20), Random.Range(-45,1)), Quaternion.identity);
+        }
+    }
+    
+    void EnemySpawner()
+    {
+        for (int i = 0; i < Random.Range(2, 5); i++)
+        {
+            Instantiate(enemySprite[Random.Range(0, enemySprite.Length)], new Vector2(Random.Range(-20, 20), Random.Range(-30, -10)), Quaternion.identity);
         }
     }
 }

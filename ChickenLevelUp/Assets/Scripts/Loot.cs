@@ -37,5 +37,12 @@ public class Loot : MonoBehaviour
             LevelingSystem.seedCount++;
             Destroy(gameObject);
         }
+
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            enemyAI.score += 2;
+            MapInteractiveSpawner.spawned--;
+            Destroy(gameObject);
+        }
     }
 }

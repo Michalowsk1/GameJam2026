@@ -270,6 +270,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+--- !u!212 &558085549 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7850776847979564729, guid: 664ef61562b6075459cd5b95aa78d865, type: 3}
+  m_PrefabInstance: {fileID: 1883017921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1664,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4222823748010337793, guid: 664ef61562b6075459cd5b95aa78d865, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 558085549}
+    - target: {fileID: 4222823748010337793, guid: 664ef61562b6075459cd5b95aa78d865, type: 3}
       propertyPath: PlayerSprite.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1782,7 +1791,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerSpawn: {x: 0, y: 0, z: 0}
   tempObjectsPositions: []
-  confirmedObjectPositions: []
   InteractableObjects:
   - {fileID: 8024231674616500325, guid: 741831e0a1407084aa7652c40ec901d5, type: 3}
   - {fileID: 5664814016147495065, guid: 8320ff0bd78b27548afc5d95ba4b0b40, type: 3}
@@ -1791,6 +1799,10 @@ MonoBehaviour:
   - {fileID: 8188047926376811363, guid: 7377b451010e2844185635a6cdf1169e, type: 3}
   - {fileID: 8188047926376811363, guid: 7377b451010e2844185635a6cdf1169e, type: 3}
   grass: {fileID: 6473612004798644026, guid: 39c17d87cc3df8b49946a654b7374ec3, type: 3}
+  enemySprite:
+  - {fileID: 5946190891174897592, guid: 26713d29e7ddfa043aab0d249b1d05ed, type: 3}
+  - {fileID: 1765845410756429276, guid: 5fe4c787ac151a64a816ec301e550bbd, type: 3}
+  - {fileID: 4308549623945980192, guid: 26184a8281b35db44b8fa8ec5417141f, type: 3}
 --- !u!1 &2105590620
 GameObject:
   m_ObjectHideFlags: 0
